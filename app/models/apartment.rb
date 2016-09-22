@@ -5,6 +5,7 @@ class Apartment < ActiveRecord::Base
   after_validation :geocode
   belongs_to :owner
   belongs_to :user
+  resourcify
   validates :owner, presence: true
   def full_address
     address1 + ' ' + address2 + ', '+ city + ', ' + postal_code + ', '+ state + ', ' + country

@@ -42,6 +42,8 @@ gem 'rspec-rails'
 
 gem 'devise', '~> 4.2'
 gem 'omniauth-twitter'
+gem 'cancancan'
+gem 'rolify'
 
 
 group :development, :test do
