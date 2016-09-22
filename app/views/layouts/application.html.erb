@@ -63,6 +63,14 @@
   <%= link_to 'Edit profile', edit_user_registration_path%>
   <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 
+  <%if !current_user.nil?%>
+    <% if current_user.has_role? :admin %>
+      <%= link_to "Access Page", admin_index_path %>
+    <%end%>
+  <%end%>
+
+
+
   <div class="container">
     <% flash.each do |name, msg| %>
       <%= content_tag :div, class: "alert alert-#{ name == :error ? "danger" : "success" } alert-dismissable", role: "alert" do %>
