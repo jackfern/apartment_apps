@@ -43,10 +43,9 @@
             <td><a href='owners/<%=apartment.owner_id%>'><%= apartment.owner.name %></a></td>
             <td><%= apartment.user.email %></td>
             <td><%= link_to 'Show', apartment %></td>
-            <% if apartment.user == current_user %>
               <td><%= link_to 'Edit', edit_apartment_path(apartment) %></td>
               <td><%= link_to 'Destroy', apartment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            <% end %>
+            
           <td><%= image_tag apartment.image.url(:thumb) %></td>
       <% end %>
     </tbody>
