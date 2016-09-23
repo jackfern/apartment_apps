@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "admin" => "admin#index"
   put "admin/:id" => "admin#update"
   patch "admin/:id" => "admin#update"
+  put "admin/remove/:id" => "admin#remove"
 
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 

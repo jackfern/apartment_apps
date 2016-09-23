@@ -1,5 +1,5 @@
 <h1>Users</h1>
-<table>
+<table class = "table">
   <thead>
     <thead>
       <tr>
@@ -15,6 +15,11 @@
       <td>
         <%= form_tag("/admin/" + user.id.to_s + "?role=admin", method: :PUT) do %>
           <input type="submit" value="Make Admin"/>
+        <% end %>
+      </td>
+      <td>
+        <%= form_tag("/admin/remove/" + user.id.to_s, method: :PUT) do %>
+          <input type="submit" value="Remove Admin"/>
         <% end %>
       </td>
     </tr>

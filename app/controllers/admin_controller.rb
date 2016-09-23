@@ -4,6 +4,7 @@ class AdminController < ApplicationController
 
   def index
     @users = User.all
+    
   end
 
   def update
@@ -12,6 +13,12 @@ class AdminController < ApplicationController
     new_role = Role.find_by_name(params[:role])
     user.add_role :admin
     redirect_to '/admin'
+  end
+
+  def remove
+    user = User.find(params[:id])
+    user.remove_role :admin # user only has one role
+    redirect_to '/admin/'
   end
 
    private

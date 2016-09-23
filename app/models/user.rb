@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
   has_many :apartments
   after_create :assign_role
 
+
+
   def self.from_omniauth(auth)
       where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.email = auth.uid + "@twitter.com"
@@ -36,6 +38,7 @@ class User < ActiveRecord::Base
   end
 
   def assign_role
+    
     add_role(:default)
   end
 
